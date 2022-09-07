@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var sex = prompt("Qual é seu sexo: 1 para feminino e 2 para masculino");
+        var alt = parseInt(prompt('qual é sua altura em Cm'));
+        alt = alt / 100;
+
+        if(sex == 1){
+            var pesoI = (62.1*alt)-44.7; 
+            document.write('seu peso ideal é '+pesoI.toFixed(2)+' kg');
+        }if(sex == 2){
+            var pesoI = (72.7*alt)-58;
+            document.write('seu peso ideal é '+pesoI.toFixed(2)+' kg'); 
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
