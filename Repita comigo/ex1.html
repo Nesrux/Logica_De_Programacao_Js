@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Escreva um algoritmo para ler 2 valores informados pelo usuário e se o segundo valor informado for igual ou menor que ZERO,
+         deve ser lido um novo valor. Ou seja, para o segundo valor não pode ser aceito o valor zero, nem um valor negativo.  
+         O seu programa deve imprimir o resultado da divisão do primeiro valor lido pelo segundo valor.*/
+         var n1 = parseInt(prompt("Digite um número"));
+         var n2 = parseInt(prompt("Digite um número"));
+         var calc = n1 / n2;
+         if(n2 <= 0){
+            alert("Digite números maiores que 0")
+           location.reload();
+         }
+
+         if(n1 !== isNaN && n2 !== isNaN){
+            alert("o resultado é "+calc);
+            location.reload();
+         }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
