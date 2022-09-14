@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+           var alunos_aprovados = 0;
+
+function ler_notas(){
+    var nota1 = parseFloat(prompt("Insira uma nota: "));
+    var nota2 = parseFloat(prompt("Insira outra nota: "));
+    var media = (nota1 + nota2) / 2;
+
+    if(media < 9.5){
+        var aluno_reprovado = prompt("O Aluno possui media: "+ media + " esse aluno foi reprovado! Deseja calcular media de outro aluno? S/N");
+        if(aluno_reprovado == "S"){
+            ler_notas();
+        } else if (aluno_reprovado == "N") {
+            resultado_final();
+
+        }else {
+            alert("Responda apenas com S ou N!")
+            ler_notas()
+        }
+
+    } else {
+        var aluno_aprovado = prompt("O Aluno possui media: "+ media + " esse aluno foi aprovado! Deseja calcular media de outro aluno? S/N");
+        alunos_aprovados++;
+        if(aluno_aprovado == "S"){
+            ler_notas();
+        } else if (aluno_aprovado == "N") {
+            resultado_final();
+
+        } else {
+            alert("Responda apenas com S ou N!")
+            ler_notas()
+        }
+    }
+}
+
+function resultado_final(){
+    alert("Teve exatamente " + alunos_aprovados + " alunos aprovados.");
+
+}
+
+ler_notas();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
