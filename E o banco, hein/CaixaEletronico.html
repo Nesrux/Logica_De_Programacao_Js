@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Caixa Eletrônico</title>
+
+	<script>
+		var senha = 3589;
+		var nome = prompt("qual é seu nome?");
+		alert("olá "+nome+" que legal voce aqui!")
+		var saldo = 100.5; //Variavel Global
+//=============================================================================================================================================================
+		function inicio() {
+			//ESCOPO  Saldo, Extrato, Saque, Depósito, Transferência e Sair. 
+			//Variavel Local
+			var escolha = parseInt(prompt('Selecione uma opção 1.) Saldo 2.) Extrato 3.) Saque 4.) Depósito 5.) Transferencia 6.) Sair'));
+			switch (escolha) {
+				case 1:
+					ver_saldo()
+					break;
+
+				case 4:
+					fazer_deposito()	
+					break;
+
+				case 3:
+					fazer_saque()	
+					break;
+
+				case 2:
+					Ver_extrato();	
+					break;
+			
+				case 5:
+					fazer_transferencia();	
+					break;
+				case 6:
+					sair();	
+					break;
+
+				default:
+					erro();
+					break;
+			}
+		}
+//==============================================================================================================
+		function ver_saldo() {
+		let validarSenha = parseInt(prompt("Digite sua Senha!"))
+			if(validarSenha === 3589){	
+				alert('Seu saldo atual é: ' + saldo);
+				inicio();
+			}else{
+				alert("Erro, senha incorreta!");
+				inicio();
+			}
+			}
+
+//=============================================================================================================
+		function fazer_deposito() {
+			let validarSenha = parseInt(prompt("Digite sua Senha!"))
+			if(validarSenha === 3589){
+					var deposito = parseFloat(prompt('Qual o valor para depósito?'));
+					
+					// Not a Number --> Isso é um não-número?
+					if (isNaN(deposito) || deposito === '') {
+						alert('Por favor, informe um número.');
+						fazer_deposito();
+					} else {
+						saldo += deposito;
+						//saldo = saldo + deposito;
+						ver_saldo();
+					}
+			}else{
+				alert("Senha incorreta")
+				inicio();
+			}	
+		}
+//=======================================================================================================
+		function fazer_saque() {
+			let validarSenha = parseInt(prompt("Digite sua Senha!"))
+			if(validarSenha === 3589){
+				var saque = parseFloat(prompt('Qual o valor para saque?'));
+					if(saque>0){
+						if(saque<saldo){
+							
+							if (isNaN(saque) || saque === '') {
+								alert('Por favor, informe um número.');
+								fazer_saque();
+							} else {
+								saldo -= saque;
+								//saldo = saldo - saque;
+								ver_saldo();
+							}
+				}	else{
+					alert("erro, operação não autorizada!");
+					inicio();
+				}
+			}else{
+				alert("ERRO, operação não autorizada!");
+				inicio();
+			}
+			}else{
+				alert("Erro, senha incorreta!")
+				inicio();
+			}	
+	}
+//=============================================================================================
+		function erro() {
+			alert('Por favor, informe um número entre 1 e 4.');
+			inicio();
+		}
+//===============================================================================================
+		function sair() {
+			var confirma = confirm('Você deseja sair?');
+			alert(nome+"foi um prazer ter você por aqui!");
+			if (confirma) {
+				alert(nome+" foi um prazer ter você por aqui!");
+				window.close();
+			} else {
+				inicio();
+			}
+		}
+//=============================================================================================================================================================================================
+		function Ver_extrato(){
+			let validarSenha = parseInt(prompt("Digite sua Senha!"))
+			if(validarSenha===3589){
+				alert("Seu extrato do mês de agosto \n Compra americanas: 900 reais \n Compra amazon: 2900 reais \n Compra no Extra: 9000 reais \n Compra na Riot Games 3900 reais.");
+				inicio();
+			}else{
+				alert("senha incorreta!");
+				inicio();
+			}
+		}
+//============================================================================================================================================================================================
+		function fazer_transferencia(){
+			let validarSenha = parseInt(prompt("Digite sua Senha!"))
+			if(validarSenha === 3589){
+				var conta = parseInt(prompt("Digite o número da conta para qual você quer transferir"));
+				if(isNaN(conta)){
+					alert("Erro, Digite apenas números");
+					inicio();
+				}
+				else{
+					var valor_transferencia = parseInt(prompt("Digite o valor da transferencia:"))
+					
+					if(valor_transferencia>0){
+
+							if(valor_transferencia<saldo){
+								alert("operação feita com sucesso!");
+							}else{
+								alert("Erro, operação invalida!");
+								inicio();
+							}
+						}
+						else{
+							alert("Erro, operação invalida, Você não pode transferir quantias menores ou iguais a 0");
+							inicio();
+						}
+				}
+				}else{
+					alert("Erro, senha incorreta")
+					inicio();
+				}
+		}
+//=================================================================================================================================================================================================
+		inicio();
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
