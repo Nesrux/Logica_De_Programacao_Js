@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+                    
+            var pequenoPorte = 1;
+            var medioPorte = 2;
+            var grandePorte = 3;
+
+        //primeiro
+        function calcularIdadePet (){
+           var portePet = parseInt(prompt("digite o porte do seu pet\n 1.)Pequeno Porte\n 2.)médio Porte \n 3.)Grande Porte"));
+           var idadePet = parseInt(prompt("Digite a idade de seu pet em anos"))
+           switch (portePet) {
+            case 1:
+                    if(idadePet == 1){
+                        alert("seu Cachorro tem 15 anos humanos");
+                        location.reload();
+                    }
+                    if(idadePet == 2){
+                        alert("seu cachorro tem 24 anos humanos")
+                        location.reload();
+                    }
+                    if(idadePet > 2){
+                        alert("seu cachorro tem "+(idadePet*4+16)+" anos humanos")
+                        location.reload();
+                    }
+                break;
+             case 2:
+                    if(idadePet == 1){
+                            alert("seu Cachorro tem 15 anos yumanos");
+                            location.reload();
+                        }
+                        if(idadePet == 2){
+                            alert("seu cachorro tem 24 anos MeusManos")
+                            location.reload();
+                        }   
+                break;
+              case 3:
+                    if(idadePet == 1){
+                            alert("seu Cachorro tem 15 anos HUMANOS");
+                            location.reload();
+                        }
+                        if(idadePet == 2){
+                            alert("seu cachorro tem 24 anos nyanmanos")
+                            location.reload();
+                        }
+                        break;
+           
+            default:
+                alert("digite apenas numeros de 1 a 3");
+                calcularIdadePet();
+                break;
+           }
+
+        }
+
+        calcularIdadePet();
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
